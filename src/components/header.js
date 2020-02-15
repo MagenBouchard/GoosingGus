@@ -10,10 +10,10 @@ import "./styles/header.css"
 
 const styles = {
   headerStyle: {
-    background: "red"
+    background: "grey"
   },
   headingStyle: {
-    fontSize: 100
+    fontSize: 75
   }
 };
 
