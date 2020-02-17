@@ -21,11 +21,35 @@ return (
             <strong>Ingredients:</strong> {props.ingredients}
           </li>
           <li>
-            <strong>Price per lb:</strong> {props.price}
+            <strong>Price per lb: $</strong> {props.price}
           </li>
         </ul>
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
     ); 

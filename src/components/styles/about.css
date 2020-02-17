@@ -1,0 +1,10 @@
+img {
+    max-width:100%;
+    height:auto;
+    object-fit: contain;
+}
+
+.col {
+    font-size: 25px;
+
+}
