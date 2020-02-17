@@ -5,7 +5,7 @@ function Body(props){
     return (
         <div>
             <div className="wrapper">{props.children}
-            <h4> Info on next batch date update section </h4>
+       
             </div>
 
 

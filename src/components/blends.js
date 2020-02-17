@@ -2,28 +2,33 @@ import React from 'react';
 import './styles/blends.css'
 
 
-function Blends(props){
+
+function Blendscard(props){
+
 return (
-    <div className="card">
+  
+  <div>
+    <h1 ><strong></strong> {props.name}</h1>
+  <div className="card" >
+
       <div className="img-container">
         <img alt={props.name} src={props.image} />
       </div>
-      <div className="content">
+      <div className="content" >
         <ul>
+         
           <li>
-            <strong>Blend Name:</strong> {props.name}
+            <strong>Ingredients:</strong> {props.ingredients}
           </li>
           <li>
-            <strong>Ingredients:</strong> {props.occupation}
-          </li>
-          <li>
-            <strong>Price per lb:</strong> {props.location}
+            <strong>Price per lb:</strong> {props.price}
           </li>
         </ul>
       </div>
+    </div>
     </div>
 
     ); 
 }
 
-export default Blends;
+export default Blendscard;
