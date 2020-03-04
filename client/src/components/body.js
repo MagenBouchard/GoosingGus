@@ -4,12 +4,13 @@ import './styles/body.css'
 function Body(props){
     return (
         <div>
-            <div className="wrapper">{props.children}
+            <div className="container">
+            <div >{props.children}
        
             </div>
 
 
-
+            </div>
         </div>
     )
 }

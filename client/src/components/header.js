@@ -17,17 +17,13 @@ import "./styles/header.css"
 function Header() {
   return (
     <header>
-     <h1 class="ml7">
-  <span class="text-wrapper">
-    <span class="letters">Goosing Gus Raw Dog Food</span>
+     <h1 className="ml7">
+  <span className="text-wrapper">
+    <span className="letters">Goosing Gus Raw Dog Food</span>
   </span>
 </h1>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
- 
 
-
-</script>
     </header>
   );
 }

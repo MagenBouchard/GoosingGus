@@ -1,42 +1,88 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import Home from "./pages/home/";
+import API from "./utils/API";
+import Login from "./pages/Login";
+import "./App.css";
+import Header from "./components/header";
+import Register from "./pages/Register";
 
-
-import './App.css';
-import Header from './components/header';
-import Body from './components/body';
-import Blendscard from './components/blends';
-import Info from './components/Info';
-import blends from './blends.json'
-import About from './components/about';
 
 class App extends Component {
   state = {
-    blends
+    authorized: false,
+    isAdmin: true
   };
 
+  componentDidMount() {
+    this.isAuthorized();
+  }
+
+  isAuthorized = () => {
+    API.isAuthorized()
+      .then(res => {
+        if (res.data.message) {
+          this.setState({ authorized: false });
+        } else {
+          this.setState({ authorized: true });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        this.setState({ authorized: false });
+      });
+  };
+
+  logout = () => {
+    API.logout()
+      .then(res => {
+        console.log("logged out");
+        this.isAuthorized();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   render() {
     return (
       <div>
-        
-      <Header /> 
-      <About />
-        <Body> 
-          {this.state.blends.map(blends => (
-            <Blendscard
-              id={blends.id}
-              name={blends.name}
-              image={blends.image}
-              ingredients={blends.ingredients}
-              price={blends.price}
-            />
-          ))}
-          <Info/>
-          </Body>
-</div> 
-          );
-        }
-        }
-        
-        export default App;
+    
+        <Header />
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home logout={this.logout} authorized={this.state.authorized} />
+            </Route>
+
+            <Route exact path="/admin">
+              {this.state.authorized ? (
+                <Redirect to="/" />
+              ) : (
+                <Login isAuthorized={this.isAuthorized} />
+              )}
+            </Route>
+            <Route exact path="/register">
+              {this.state.authorized ? (
+                <Redirect to="/" />
+              ) : (
+                <Register isAuthorized={this.isAuthorized} />
+              )}
+            </Route>
+            <Route>
+              <Redirect to="/" />
+            </Route>
+          </Switch>
+        </Router>
+    
+      </div>
+    );
+  }
+}
+
+export default App;

@@ -1,10 +1,9 @@
 import React from 'react';
 import './styles/body.css'
 
-function Info(){
+function Login(){
     return (
-   
-        <div className="wrapper">
+        <div className='text-center'>
             <h4>This is some information on raw feeding </h4>
             <br></br>
             <h4>This is some information on raw feeding </h4>
@@ -13,6 +12,7 @@ function Info(){
             <br></br>
             <h4>This is some information on raw feeding </h4>
             <br></br>
+
 
 
 
@@ -24,4 +24,4 @@ function Info(){
     )
 }
 
-export default Info;
+export default Login;
