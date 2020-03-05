@@ -5,6 +5,7 @@ import Body from "../../components/body";
 import Blendscard from "../../components/blends";
 import Info from "../../components/Info";
 import About from "../../components/about";
+import Deadline from "../../components/Deadline/index"
 
 class Home extends Component {
   state = {
@@ -16,6 +17,7 @@ class Home extends Component {
       <div>
      
         <About />
+        <Deadline />
         <Body>
           <Blendscard
            authorized={this.props.authorized}

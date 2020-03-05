@@ -14,12 +14,6 @@ function Info(){
             <h4>This is some information on raw feeding </h4>
             <br></br>
 
-
-
-
-
-
-
         </div>
     )
 }

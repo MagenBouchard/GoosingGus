@@ -30,5 +30,13 @@ export default {
   // Saves a blend to the database
   saveblends: function(blendData) {
     return axios.post("/api/blends", blendData);
-  }
+  },
+  //Save a date to the database
+    savedates: function(datesData){
+      return axios.post("/api/dates", datesData);
+    },
+    //Deltes the date with a given id
+    deletedates: function(id){
+      return axios.delete("api/dates/" + id);
+    }
 };
