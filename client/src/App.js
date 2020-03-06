@@ -11,6 +11,8 @@ import Login from "./pages/Login";
 import "./App.css";
 import Header from "./components/header";
 import Register from "./pages/Register";
+import Nav from "./components/nav";
+
 
 
 
@@ -53,6 +55,11 @@ class App extends Component {
   render() {
     return (
       <div>
+
+       
+          
+      
+        
     
         <Header />
         <Router>
@@ -76,10 +83,11 @@ class App extends Component {
               )}
             </Route>
             <Route>
-              <Redirect to="/" />
+              <Redirect to="/logout" />
             </Route>
           </Switch>
         </Router>
+        <Nav logout={this.logout}></Nav>
     
       </div>
     );

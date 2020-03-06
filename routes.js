@@ -84,6 +84,7 @@ router.post("/api/login", function(req, res, next) {
 router.get("/api/logout", function(req, res) {
   req.logout();
   res.json({ message: "logged out" });
+  res.redirect("/")
 });
 
 router.get("/api/user", function(req, res) {

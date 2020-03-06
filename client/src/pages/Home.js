@@ -9,28 +9,16 @@ import Blendscard from "../../components/blends";
 import Info from "../../components/Info";
 import About from "../../components/about";
 
-function Home({logout}) {
+function Home() {
   return (
-    <Container fluid>
+  
 
 <About />
         <Body>
           <Blendscard  />
           <Info />
         </Body>
-      <Row>
-        <Col size="md-12">
-          <Jumbotron>
-            <h1>Welcome to the Home Page</h1>
-            <FormBtn
-              text="Logout"
-              onClick={logout}
-              classes="btn-primary logoutBtn"
-            />
-          </Jumbotron>
-        </Col>
-      </Row>
-    </Container>
+     
   );
 }
 
