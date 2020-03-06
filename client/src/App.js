@@ -66,6 +66,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Home logout={this.logout} authorized={this.state.authorized} />
+
             </Route>
 
             <Route exact path="/admin">
@@ -83,11 +84,11 @@ class App extends Component {
               )}
             </Route>
             <Route>
-              <Redirect to="/logout" />
+              <Redirect to="/" />
             </Route>
           </Switch>
         </Router>
-        <Nav logout={this.logout}></Nav>
+        <Nav logout={this.logout} />
     
       </div>
     );

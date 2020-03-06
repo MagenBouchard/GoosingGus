@@ -1,6 +1,7 @@
 // const passport = require("passport");
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 const db = require("./models");
 var isAuthenticated = require("./config/middleware/isAuthenticated");
 const passport = require("passport");
@@ -84,7 +85,6 @@ router.post("/api/login", function(req, res, next) {
 router.get("/api/logout", function(req, res) {
   req.logout();
   res.json({ message: "logged out" });
-  res.redirect("/")
 });
 
 router.get("/api/user", function(req, res) {
