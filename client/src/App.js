@@ -13,6 +13,7 @@ import Header from "./components/header";
 import Register from "./pages/Register";
 
 
+
 class App extends Component {
   state = {
     authorized: false,
