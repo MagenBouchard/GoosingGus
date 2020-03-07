@@ -70,7 +70,7 @@ class Deadline extends Component {
 
   render() {
     return (
-      <div >
+      <div className="container">
            {this.props.authorized ? (
         
               <form id="add-deadline" onSubmit={this.handleSubmit}>
@@ -78,7 +78,7 @@ class Deadline extends Component {
 
 
                 <div className="form-row">
-                <div className="form-group col-md-6">
+                <div className="form-group col">
                   <label>Date update</label>
                   <input
                     className="form-control"
@@ -101,14 +101,16 @@ class Deadline extends Component {
           ) : (
             ""
           )}
-        DEADLINE
+        
 
 
         <div className="holder">
           {this.state.deadlines.map(deadlines => (
             <div className="date" key={deadlines._id}>
-              <h1>Order Deadline</h1>
+              <h1 className="order-deadline">Order Deadline</h1>
+              <hr></hr>
               <h1>{deadlines.date}</h1>
+              <hr></hr>
 
          
               <div className="content">

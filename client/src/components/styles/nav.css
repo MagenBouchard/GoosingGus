@@ -1,0 +1,16 @@
+nav {
+  
+    margin-left: 10px;
+   
+}
+
+.logout-button{
+    padding-top: 30px;
+    width: 100px;
+    background-color: transparent;
+    border: none;
+    justify-content: inherit;
+    margin: 7px;
+  
+
+}

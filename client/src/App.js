@@ -55,6 +55,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div className="container">
         <Header />
         <Router>
           <Switch>
@@ -82,7 +83,9 @@ class App extends Component {
             </Route>
           </Switch>
         </Router>
+        </div>
         <Nav logout={this.logout} />
+
     
       </div>
     );

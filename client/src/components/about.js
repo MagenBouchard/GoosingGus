@@ -3,34 +3,56 @@ import gus from "./styles/gus.jpg"
 import './styles/about.css'
 
 
+
+
+
 function About(){
 
     return (
-        
+        <div>
+      <hr></hr>
+<h3 className="text-center">
+  <br></br> </h3>
       
-      <div>
 
 
-<div className="jumbotron jumbotron-fluid">
+<div >
 <div className="container">
+  <div className="about-container">
   <div className="row">
     <div className="col">
-     <img src={gus} alt="Gus"></img>
+     <img className="gus" src={gus} alt="Gus"></img>
     
  
 
     </div>
     <div className="col">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-     
+      <br>
+      </br>
+      <hr></hr>
+    Providing quality raw dog food, balanced and ready to serve to even the pickiest pet. <br>
+    </br>
+    <hr></hr>
+    Made in house from scratch with only the best Quality Meats available.    
+    <hr></hr> 
+    Custom blends on request.
+    <hr></hr>
     </div>
-  
-
+    
+    </div>
+   
  
-    </div>
-    </div>
-    </div>
 
+
+    
+
+
+
+
+
+    </div>
+    </div>
+</div>
     </div>
 
         ); 

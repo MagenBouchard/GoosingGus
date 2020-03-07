@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/header.css"
+import "./styles/nav.css"
 
 // By importing the Header.css file, it is added to the DOM whenever this component loads
 
@@ -11,19 +11,30 @@ import "./styles/header.css"
 
 function Nav({logout}) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a className="navbar-brand" href="/">
-            Home
-          </a>
-          <a className="navbar-brand" href="/admin">
+      <div >
+        <nav >
+
+
+
+        <a className="" href="/admin">
             Admin
           </a>
-          <button text="Logout"
+          <button
+          className=" logout-button"
+           text="Logout"
               onClick={logout}
-              classes="btn logoutBtn">
+              classes="">
             Logout
           </button>
+
+       
+         
         </nav>
+
+
+        
+      
+        </div>
       );
     }
 

@@ -2,9 +2,14 @@ img {
     max-width:100%;
     height:auto;
     object-fit: contain;
+    border-radius: 1750px;
 }
 
 .col {
     font-size: 25px;
 
+}
+
+.about-container {
+   text-align: center;
 }

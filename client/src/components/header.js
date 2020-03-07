@@ -14,9 +14,10 @@ function Header() {
     <header>
      <h1 className="ml7">
   <span className="text-wrapper">
-    <span className="letters">Goosing Gus Raw Dog Food</span>
+    <span className="letters">Goosing Gus<br></br> Raw Dog Food</span>
   </span>
 </h1>
+
 
 
     </header>
