@@ -104,8 +104,51 @@ router.get("/api/authorized", isAuthenticated, function(req, res) {
   res.json(req.user);
 });
 
+
+
+// get the date
+
+
+
+
+router.get("/api/deadlines", (req, res, next) => {
+  db.Deadline.find({}).then(function(deadline) {
+    res.send(deadline);
+  })
+  .catch(err=> {
+    console.log(err);
+  })
+});
+
+
+//Add a new deadline
+router.post("/api/deadlines", function(req, res, next) {
+  // console.log(req.body);
+
+  //creates a new instance of the blend object locally then send to db to save
+  db.Deadline.create(req.body)
+    .then(function(deadline) {
+      res.send(deadline);
+    })
+    .catch(next);
+});
+
+
+
+// Deletes a deadlines
+router.delete("/api/deadlines/:id", function(req, res, next) {
+  db.Deadline.findByIdAndRemove(req.params.id).then(function(deadline) {
+    res.send(deadline);
+  })
+  .catch(err => {
+    console.log(err);
+  })
+});
+
+
+
+
 router.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
 module.exports = router;

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import "./style.css"
+
 
 // import { json } from 'express';
 
@@ -8,48 +10,59 @@ class Deadline extends Component {
     super();
 
     this.state = {
-      dates: [],
+      deadlines: [],
+      name: "",
       date: ""
       
     };
   }
 
-  deletedates = id => {
-    console.log(id);
-    API.deletedate(id)
-      .then(res => this.loaddate())
-      .catch(err => console.log(err));
-  };
 
 
-  loaddates = () => {
-    API.getdates()
+  loaddeadlines = () => {
+    API.getdeadlines()
       .then(res =>
         this.setState({
-          dates: res.data,
+          deadlines: res.data,
+          name: "",
           date: ""
         })
       )
       .catch(err => console.log(err));
   };
 
+
+  deletedeadlines = id => {
+    console.log(id);
+    API.deletedeadlines(id)
+      .then(res => this.loaddeadlines())
+      .catch(err => console.log(err));
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
   
   handleFormSubmit = event => {
     event.preventDefault();
-    API.savedates({
-      date: this.state.date,
+    API.savedeadlines({
+      name: this.state.name,
+      date: this.state.date
     })
-      .then(res => this.loadsdates())
+      .then(res => this.loaddeadlines())
       .catch(err => console.log(err));
   };
 
   
   componentDidMount() {
-    fetch("/api/dates")
+    fetch("/api/deadlines")
       .then(res => res.json())
-      .then(dates =>
-        this.setState({ dates }, () =>
-          console.log("Dates fetched:..", dates)
+      .then(deadlines =>
+        this.setState({ deadlines }, () =>
+          console.log("Dates fetched:..", deadlines)
         )
       );
   }
@@ -57,10 +70,10 @@ class Deadline extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div >
            {this.props.authorized ? (
-            <div className="blend-form">
-              <form id="add-blend" onSubmit={this.handleSubmit}>
+        
+              <form id="add-deadline" onSubmit={this.handleSubmit}>
 
 
 
@@ -84,12 +97,46 @@ class Deadline extends Component {
                   Submit
                 </button>
               </form>
-            </div>
+         
           ) : (
             ""
           )}
         DEADLINE
-      </div>
+
+
+        <div className="holder">
+          {this.state.deadlines.map(deadlines => (
+            <div className="date" key={deadlines._id}>
+              <h1>Order Deadline</h1>
+              <h1>{deadlines.date}</h1>
+
+         
+              <div className="content">
+              
+                  
+                 
+                
+                    {this.props.authorized ? (
+                      <div>
+                        {" "}
+                        <button
+                          type="button"
+                          onClick={() => this.deletedeadlines(deadlines._id)}
+                        >
+                          {" "}
+                          Delete
+                        </button>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                 
+                
+              </div>
+            </div>
+          ))}
+        </div>
+        </div>
     );
   }
 }

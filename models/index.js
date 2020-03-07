@@ -1,4 +1,5 @@
 module.exports = {
     Blend: require("./blends"),
-    User: require("./user")
+    User: require("./user"),
+    Deadline: require("./dates")
   };

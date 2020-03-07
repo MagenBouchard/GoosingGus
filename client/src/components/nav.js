@@ -20,7 +20,7 @@ function Nav({logout}) {
           </a>
           <button text="Logout"
               onClick={logout}
-              classes="btn-primary logoutBtn">
+              classes="btn logoutBtn">
             Logout
           </button>
         </nav>

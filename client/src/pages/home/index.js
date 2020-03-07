@@ -17,7 +17,8 @@ class Home extends Component {
       <div>
      
         <About />
-        <Deadline />
+        <Deadline 
+        authorized={this.props.authorized} />
         <Body>
           <Blendscard
            authorized={this.props.authorized}

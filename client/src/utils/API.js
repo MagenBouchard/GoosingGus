@@ -32,11 +32,14 @@ export default {
     return axios.post("/api/blends", blendData);
   },
   //Save a date to the database
-    savedates: function(datesData){
-      return axios.post("/api/dates", datesData);
+    savedeadlines: function(deadlinesData){
+      return axios.post("/api/deadlines/", deadlinesData);
     },
     //Deltes the date with a given id
-    deletedates: function(id){
-      return axios.delete("api/dates/" + id);
+    deletedeadlines: function(id){
+      return axios.delete("api/deadlines/" + id);
+    }, 
+      getdeadlines: function() {
+        return axios.get("/api/deadlines/");
     }
 };
