@@ -13,3 +13,7 @@ img {
 .about-container {
    text-align: center;
 }
+
+hr {
+    color: black;
+}

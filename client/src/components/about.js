@@ -10,6 +10,7 @@ function About(){
 
     return (
         <div>
+          <br></br>
       <hr></hr>
 <h3 className="text-center">
   <br></br> </h3>
@@ -29,14 +30,14 @@ function About(){
     <div className="col">
       <br>
       </br>
-      <hr></hr>
+  
     Providing quality raw dog food, balanced and ready to serve to even the pickiest pet. <br>
     </br>
     <hr></hr>
     Made in house from scratch with only the best Quality Meats available.    
     <hr></hr> 
     Custom blends on request.
-    <hr></hr>
+   
     </div>
     
     </div>
@@ -53,6 +54,8 @@ function About(){
     </div>
     </div>
 </div>
+<br></br>
+<hr></hr>
     </div>
 
         ); 
