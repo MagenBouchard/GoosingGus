@@ -12,7 +12,7 @@ import "./styles/header.css"
 function Header() {
   return (
     <header>
-     <h1 className="ml7">
+     <h1 className="ml7 container">
   <span className="text-wrapper">
     <span className="letters">Goosing Gus<br></br> Raw Dog Food</span>
   </span>
